@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR Results</title>
+
+    <style>
+        .leftContent{
+            float: left;
+            width: 58%;
+        };
+        .rightContent{
+            float: right;
+            width: 38%;
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="leftContent">
+        <h1>Detection Results</h1>
+        <img src="{{ url_for('result_image', filename=result_image) }}" alt="Result Image">
+    </div>
+
+    <div class="rightContent">
+        <h1>Cropped Images with OCR Results</h1>
+        <ul>
+            {% for img, text in cropped_results %}
+            <li>
+                <img src="{{ url_for('cropped_image', filename=img) }}" alt="Cropped Image">
+                <p>OCR Result: {{ text }}</p>
+            </li>
+            {% endfor %}
+    </ul>
+    </div>
+
+    
+</body>
+</html>

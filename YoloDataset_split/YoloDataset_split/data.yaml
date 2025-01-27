@@ -1,0 +1,16 @@
+train: images/train
+
+val: images/val
+
+nc: 9
+
+names:
+  0: Stamp
+  1: Signature
+  2: DocDate
+  3: Brief
+  4: Signer
+  5: SourceDocNo
+  6: Notation
+  7: SenderCode
+  8: DocType
